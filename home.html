@@ -45,7 +45,22 @@
 	<script type='text/javascript'>
 	function initEmbeddedMessaging() {
 		try {
-			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+			embeddedservice_bootstrap.settings.language = 'en_US'; 
+
+			let userIp = 'IP not available';
+        		try {
+          			const response = await fetch('https://api.ipify.org?format=json');
+        			const data = await response.json();
+            		userIp = data.ip;
+            	    console.log('IP: ', userIp);
+         	  	} catch (e) {
+                  	  console.warn('IP fetch failed', e);
+            	}
+
+            	window.addEventListener("onEmbeddedMessagingReady", () => {
+                    // Send data to Salesforce
+            		embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({'visitorip' : userIp});
+            	});
 
 			embeddedservice_bootstrap.init(
 				'00Dfn000001YDAL',
