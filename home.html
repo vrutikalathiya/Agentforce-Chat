@@ -42,10 +42,11 @@
 		};
 	</script>
 	<script type='text/javascript' src='https://bidtrack-dev-ed.develop.my.site.com/ESWQuickPayableWeb1768284886912/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script> -->
+	
 	<script type='text/javascript'>
 	async function initEmbeddedMessaging() {
 		try {
-			embeddedservice_bootstrap.settings.language = 'en_US'; 
+			embeddedservice_bootstrap.settings.language = 'en_US';
 
 			let userIp = 'IP not available';
         		try {
@@ -56,12 +57,7 @@
          	  	} catch (e) {
                   	  console.warn('IP fetch failed', e);
             	}
-
-            	window.addEventListener("onEmbeddedMessagingReady", () => {
-                    // Send data to Salesforce
-            		embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({'visitorip' : userIp});
-            	});
-
+			
 			embeddedservice_bootstrap.init(
 				'00Dfn000001YDAL',
 				'Github_Test',
@@ -76,6 +72,5 @@
 	};
 </script>
 <script type='text/javascript' src='https://bidtrack-dev-ed.develop.my.site.com/ESWGithubTest1769768247765/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
-
 </body>
 </html>
