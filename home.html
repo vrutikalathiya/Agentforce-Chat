@@ -29,19 +29,19 @@
             	});
 
 				embeddedservice_bootstrap.init(
-					'00Dfn000001YDAL',
-					'Quick_Payable_Web',
-					'https://bidtrack-dev-ed.develop.my.site.com/ESWQuickPayableWeb1768284886912',
-					{
-						scrt2URL: 'https://bidtrack-dev-ed.develop.my.salesforce-scrt.com'
-					}
-				);
-			} catch (err) {
-				console.error('Error loading Embedded Messaging: ', err);
-			}
-		};
-	</script>
-	<script type='text/javascript' src='https://bidtrack-dev-ed.develop.my.site.com/ESWQuickPayableWeb1768284886912/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+				'00Dfn000001YDAL',
+				'Differenz_Force_Web',
+				'https://bidtrack-dev-ed.develop.my.site.com/ESWAgentForceWeb1767072560784',
+				{
+					scrt2URL: 'https://bidtrack-dev-ed.develop.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://bidtrack-dev-ed.develop.my.site.com/ESWAgentForceWeb1767072560784/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 	
 	<!-- <script type='text/javascript'>
 	async function initEmbeddedMessaging() {
