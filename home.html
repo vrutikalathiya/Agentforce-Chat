@@ -4,31 +4,28 @@
   <title>Local Server</title>
 </head>
 <body>
-	<script type='text/javascript'>
+<script type='text/javascript'>
 	async function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-
-			let userIp = 'IP not available';
-			
 			try {
-			const response = await fetch('https://api.ipify.org?format=json');
-						const data = await response.json();
-						userIp = data.ip;
-						console.log('IP: ', userIp);
-					} catch (e) {
-						console.warn('IP fetch failed', e);
-					}
-
-					window.addEventListener("onEmbeddedMessagingReady", () => {
-						// Send data to Salesforce
-						embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({'visitorip' : userIp});
-					});
-
+				const response = await fetch('https://api.ipify.org?format=json');
+							const data = await response.json();
+							userIp = data.ip;
+							console.log('IP: ', userIp);
+						} catch (e) {
+							console.warn('IP fetch failed', e);
+						}
+	
+							window.addEventListener("onEmbeddedMessagingReady", () => {
+							// Send data to Salesforce
+							embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({'visitorip' : userIp});
+						});
+			
 			embeddedservice_bootstrap.init(
 				'00Dfn000001YDAL',
-				'Quick_Receivable_Web',
-				'https://bidtrack-dev-ed.develop.my.site.com/ESWQuickReceivableWeb1778838313659',
+				'Github_Test',
+				'https://bidtrack-dev-ed.develop.my.site.com/ESWGithubTest1769768247765',
 				{
 					scrt2URL: 'https://bidtrack-dev-ed.develop.my.salesforce-scrt.com'
 				}
@@ -38,6 +35,6 @@
 		}
 	};
 </script>
-<script type='text/javascript' src='https://bidtrack-dev-ed.develop.my.site.com/ESWQuickReceivableWeb1778838313659/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+<script type='text/javascript' src='https://bidtrack-dev-ed.develop.my.site.com/ESWGithubTest1769768247765/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 </body>
 </html>
